@@ -12,14 +12,10 @@
 4. 開発しましょう！
 
 ## 必要環境
-🛠 現在作成中
+[SECURITY.md](./SECURITY.md) を見てください
 
 ## 行動規範
-🛠 現在作成中
+[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) を見てください
 
 ## 貢献したい方
-🛠 現在作成中
-
-## Todo
- - とりあえずコードをリメイクしてアップロード
- - IssueとPRのテンプレ
+[CONTRIBUTING.md](./CONTRIBUTING.md) を見てください
