@@ -1,20 +1,20 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: '改善提案'
+about: '「こうするともっとよくなる」といったWebサイトへの提案はこちら'
 title: ''
 labels: enhancement
 assignees: ''
 
 ---
 
-**ご要望の機能は問題に関連していますか？説明してください**
-問題が何であるかを明確かつ簡潔に説明してください。例. 私はいつも[....]の時にイライラしています。
+## 改善詳細
+- xxxx(できるだけ簡潔に)
 
-**希望の解決策**
-実現したいことを明確かつ簡潔に説明してください。
+## 📷 スクリーンショット
 
-**検討した代替案**
-検討した代替ソリューションや機能について、明確かつ簡潔に説明してください。
+## 😀 期待する見せ方・挙動
+- xxxx(できるだけ簡潔に)
 
-**その他**
-機能要求に関するその他のコンテキストやスクリーンショットをここに追加してください。
+## 動作環境・ブラウザ
+- macOS / Windows / Linux / iOS / Android
+- Chrome / Safari / Firefox / Edge / Internet Explorer
