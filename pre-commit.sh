@@ -3,6 +3,10 @@
 
 unchangeable_files=(
   ^src/firebaseConfig.ts
+  ^.eslintrc.js
+  ^firebase.json
+  ^tsconfig.json
+  ^webpack.config.js
 )
 
 containsElement () {
