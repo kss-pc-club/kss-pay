@@ -6,10 +6,12 @@
 そこで、これから使ってほしい・みんなで作り上げようという願いでオープンソースにした。
 
 ## 開発方法
-1. [Node.js](https://nodejs.org/ja/) と [yarn](https://classic.yarnpkg.com/ja/) をインストール
-2. 依存関係をインストール
-3. ローカルサーバーを立てる
-4. 開発しましょう！
+1. プロジェクトを [Fork](https://github.com/kss-pc-club/kss-pay/fork) します。
+2. Forkしたプロジェクトをダウンロードします（`git clone https://github.com/(あなたのユーザー名)/kss-pay.git`）
+3. [Node.js](https://nodejs.org/ja/) と [yarn](https://classic.yarnpkg.com/ja/) をインストール
+4. 依存関係をインストール（`yarn install --frozen-lockfile`）
+5. ローカルサーバーを立てる（`yarn start`）
+6. 開発しましょう！
 
 ## 必要環境
 [SECURITY.md](./SECURITY.md) を見てください
@@ -19,3 +21,6 @@
 
 ## 貢献したい方
 [CONTRIBUTING.md](./CONTRIBUTING.md) を見てください
+
+## 製作者
+ - [Asa](https://github.com/a01sa01to/)
