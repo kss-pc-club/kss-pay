@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # ref: https://qiita.com/ryounagaoka/items/3e7a1b44d43ad0547d4f
 
+# 変更されたら困るファイルを記述
 unchangeable_files=(
   ^src/firebaseConfig.ts
   ^.eslintrc.js

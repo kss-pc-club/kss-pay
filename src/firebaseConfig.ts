@@ -1,3 +1,5 @@
+//----- Firebaseの設定ファイル。絶対に変えないこと！ -----//
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDL9XGWSENz1_7P3KoFFT3rKHv4aBuQGGs',
   authDomain: 'kss-pay-f0a57.firebaseapp.com',
