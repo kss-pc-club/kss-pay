@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "firebase serve",
-    "build": "eslint --fix src/**/*.ts && webpack",
-    "eslint:fix": "eslint --fix src/**/*.ts"
+    "build": "eslint --fix src/**/*.{js,ts} && webpack",
+    "eslint:fix": "eslint --fix src/**/*.{js,ts}"
   },
   "lint-staged": {
     "*.{js,css,ts}": [
