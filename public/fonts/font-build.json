@@ -1,0 +1,12 @@
+{
+  "name": "Material Design Icons",
+  "prefix": "mdi",
+  "fileName": "materialdesignicons",
+  "fontName": "Material Design Icons",
+  "fontFamily": "materialdesignicons",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  }
+}

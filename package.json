@@ -7,15 +7,16 @@
   "license": "MIT",
   "scripts": {
     "start": "firebase serve",
-    "build": "eslint --fix src/**/*.{js,ts} && webpack",
-    "eslint:fix": "eslint --fix src/**/*.{js,ts}"
+    "build": "webpack",
+    "eslint:fix": "eslint --fix src/**/*.{js,ts}",
+    "font-build": "cd public/fonts && npx @mdi/font-build"
   },
   "lint-staged": {
-    "*.{js,css,ts}": [
+    "*.{js,ts}": [
       "eslint --fix"
     ],
     "*.{css,scss}": [
-      "stylelint"
+      "stylelint --fix --allow-empty-input"
     ]
   },
   "husky": {
@@ -29,6 +30,7 @@
     "jquery": "^3.5.1"
   },
   "devDependencies": {
+    "@mdi/font-build": "^1.8.6",
     "@types/jquery": "^3.5.5",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
@@ -41,6 +43,9 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
     "ts-loader": "^8.0.12",
     "typescript": "^4.1.3",
     "webpack": "^5.11.0",
