@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1,initial-scale=1,maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>インターネットに接続されていません</title>
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <meta name="msapplication-TileColor" content="#ffcc65">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#ffcc65">
+  <meta name="theme-color" content="#ffcc65">
+</head>
+
+<body>
+  <header></header>
+  <script>
+    const intend = () => {
+      location.href = './' + location.search.substring(0);
+    }
+    if ('onLine' in navigator) {
+      if (navigator.onLine) {
+        intend();
+      } else {
+        fetch('./_header.html').then(r => r.text()).then(t => document.querySelector('header').innerHTML = t);
+      }
+    }
+    window.addEventListener('online', intend);
+  </script>
+  <main>
+    <h1>オフラインです</h1>
+    <p>このデバイスはネットワークに接続されていないようです。</p>
+    <p>ネットワークに接続されたら自動的に再読み込みされます。</p>
+  </main>
+</body>
+
+</html>
