@@ -62,6 +62,10 @@
   content: "\F20C";
 }
 
+.mdi-mail::before {
+  content: "\F1EE";
+}
+
 .mdi-blank::before {
   content: "\F68C";
   visibility: hidden;

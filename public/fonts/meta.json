@@ -1,37 +1,37 @@
 [{
-    "name": "more_vert",
-    "codepoint": "F37B"
-  },
-  {
-    "name": "clear",
-    "codepoint": "F265"
-  },
-  {
-    "name": "refresh",
-    "codepoint": "F450"
-  }, {
-    "name": "settings",
-    "codepoint": "F493"
-  }, {
-    "name": "help_outline",
-    "codepoint": "F625"
-  }, {
-    "name": "payment",
-    "codepoint": "F19B"
-  }, {
-    "name": "store_mall_directory",
-    "codepoint": "F4DC"
-  }, {
-    "name": "assignment",
-    "codepoint": "F14E"
-  }, {
-    "name": "google",
-    "codepoint": "F2AD"
-  }, {
-    "name": "twitter",
-    "codepoint": "F544"
-  }, {
-    "name": "facebook",
-    "codepoint": "F20C"
-  }
-]
+  "name": "more_vert",
+  "codepoint": "F37B"
+}, {
+  "name": "clear",
+  "codepoint": "F265"
+}, {
+  "name": "refresh",
+  "codepoint": "F450"
+}, {
+  "name": "settings",
+  "codepoint": "F493"
+}, {
+  "name": "help_outline",
+  "codepoint": "F625"
+}, {
+  "name": "payment",
+  "codepoint": "F19B"
+}, {
+  "name": "store_mall_directory",
+  "codepoint": "F4DC"
+}, {
+  "name": "assignment",
+  "codepoint": "F14E"
+}, {
+  "name": "google",
+  "codepoint": "F2AD"
+}, {
+  "name": "twitter",
+  "codepoint": "F544"
+}, {
+  "name": "facebook",
+  "codepoint": "F20C"
+}, {
+  "name": "mail",
+  "codepoint": "F1EE"
+}]
