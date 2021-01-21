@@ -1,0 +1,13 @@
+@font-face{
+  font-family: "Product Sans";
+  src: url("/fonts/ProductSans.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+
+i.mdi.mdi-{
+
+  &google, &twitter, &facebook{
+    transform: scale(0.7);
+  }
+}
