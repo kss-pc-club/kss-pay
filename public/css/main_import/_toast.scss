@@ -1,0 +1,27 @@
+main div.toast{
+  position: fixed;
+  bottom: 15vh;
+  left: 0;
+  z-index: 4;
+  display: none;
+  place-content: center;
+  width: 100vw;
+
+  .cont{
+    grid-area: c;
+    width: fit-content;
+    max-width: 90vw;
+    padding: 8px 24px;
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 0 #777;
+
+    p{
+      width: fit-content;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+}

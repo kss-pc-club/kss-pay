@@ -1,0 +1,30 @@
+div.loader_container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  place-content: center;
+  gap: 1ch;
+
+  div.loader{
+    width: 120px;
+    height: 120px;
+    border: 16px solid #f3f3f3;
+    border-bottom: 16px solid #ffcc65;
+    border-radius: 50%;
+    animation: spin 1s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+  }
+}
+
+@keyframes spin {
+
+  0% { transform: rotate(0deg); }
+
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+}

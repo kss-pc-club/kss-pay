@@ -1,0 +1,48 @@
+main div.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #0005;
+
+  .modalContainer{
+    grid-area: i;
+    max-width: 90vw;
+    padding: 8px;
+    background: #fff;
+    border-radius: 4px;
+
+    p.close{
+      padding-right: 16px;
+      margin: 0;
+      font-size: 24px;
+      text-align: right;
+    }
+
+    p.ttl{
+      margin: 4px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    p.detail{
+      max-width: 90vw;
+      margin: 8px;
+      font-size: 14px;
+      color: #555;
+      white-space: pre-wrap;
+    }
+
+    p  > a{
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #555;
+      text-align: center;
+    }
+  }
+}
