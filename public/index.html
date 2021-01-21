@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link href="./css/main.css" rel="stylesheet">
+    <script src="./bundle.js"></script>
+    <title>KSS Pay</title>
+  </head>
+  <body>
+    <div class="loader_container"><div class="loader"></div></div>
+    <header></header>
+    <main>
+      <div class="container home show showing">
+        <div class="container barcode">
+          <canvas id="barcode" width="236" height="148"></canvas>
+          <p class="rem">残高</p>
+          <p class="money"><span class="placeholder"><span class="placeholder-bg"></span></span></p>
+          <p class="unit" style="display: none;">円</p>
+        </div>
+        <p id="help"><mdi-icon icon="help_outline"></mdi-icon><span>決済するには？</span></p>
+      </div>
+      <div class="container store">
+        <h1>使えるお店</h1>
+        <p>校舎1F・2Fに待ち時間を掲示しております。ご活用ください。</p>
+        <ul class="store column">
+          <li>
+            <p class="cls ttl">5-3</p>
+            <p class="name detail">餃子ドッグ てるみんみん</p>
+            <p class="where" data-place="中庭"></p>
+          </li>
+        </ul>
+      </div>
+      <div class="container history">
+        <h1>使用履歴</h1>
+        <div class="history">
+          <ul>
+            <li>
+              <p class="when">2019.10.26 0:27</p>
+              <p class="where">PC部</p>
+              <p class="what">KSS Pay</p>
+              <p class="amount">3</p>
+              <p class="cost">600</p>
+            </li>
+            <li>
+              <p class="when">2019.10.26 0:07</p>
+              <p class="where">5-3</p>
+              <p class="what">餃子ドッグ</p>
+              <p class="amount">1</p>
+              <p class="cost">200</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="setting_container">
+        <div class="top"><mdi-icon icon="clear"></mdi-icon></div>
+        <div class="main">
+          <div class="container setting">
+            <h1>設定</h1>
+            <div class="column sns">
+              <p class="ttl">SNS連携</p>
+              <p class="detail">連携して、ログインをもっと手軽に</p>
+              <div class="btn">
+                <div class="btnC">
+                  <button id="mail"><mdi-icon icon="mail"></mdi-icon></button>
+                  <p class="status linked"></p>
+                </div>
+                <div class="btnC">
+                  <button id="google"><mdi-icon icon="google"></mdi-icon></button>
+                  <p class="status linked"></p>
+                </div>
+                <div class="btnC">
+                  <button id="twitter"><mdi-icon icon="twitter"></mdi-icon></button>
+                  <p class="status"></p>
+                </div>
+                <div class="btnC">
+                  <button id="facebook"><mdi-icon icon="facebook"></button>
+                  <p class="status linked"></p>
+                </div>
+              </div>
+            </div>
+            <div class="column id">
+              <p class="userId ttl" style='font-family: "Product Sans", "Poppins", "Kosugi Maru", "M PLUS Rounded 1c", "Noto Sans Japanese", sans-serif;'>000000000000000</p>
+              <p class="detail">問い合わせの際に必要になります</p>
+            </div>
+            <div class="column change">
+              <p class="ttl" id="changeMail">メールアドレス変更</p>
+              <p class="detail">変更すると、変更前のものではログインできなくなります</p>
+            </div>
+            <div class="column change">
+              <p class="ttl" id="changePass">パスワード変更</p>
+              <p class="detail">パスワード変更用のメールをお送りします</p>
+            </div>
+            <div class="column lgout">
+              <p class="ttl" id="logout">ログアウト</p>
+              <p class="detail">会員データは削除されません</p>
+            </div>
+            <div class="column dl">
+              <p class="ttl" id="delete">アカウントを削除</p>
+              <p class="detail">この操作は元に戻せません</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal">
+        <div class="modalContainer">
+          <p class="close"><mdi-icon icon="clear"></mdi-icon></p>
+          <p class="ttl"></p>
+          <p class="detail"></p>
+          <p><a href=""></a></p>
+        </div>
+      </div>
+      <div class="toast">
+        <div class="cont">
+          <p></p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="home showing">
+        <mdi-icon icon="payment"></mdi-icon>
+        <p>支払い</p>
+      </div>
+      <div class="store">
+        <mdi-icon icon="store_mall_directory"></mdi-icon>
+        <p>使えるお店</p>
+      </div>
+      <div class="history">
+        <mdi-icon icon="assignment"></mdi-icon>
+        <p>履歴</p>
+      </div>
+    </footer>
+  </body>
+</html>
