@@ -1,0 +1,162 @@
+main div.setting_container{
+  position: fixed;
+  top: 120vh;
+  left: 0;
+  z-index: 3;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  // display: none;
+  box-shadow: 0 0 10px 0 #aaa;
+
+  div.top{
+    box-sizing: border-box;
+    width: 98vw;
+    padding: 8px 5vw;
+    margin: 4px 1vw;
+    text-align: right;
+    border-bottom: 2px #eee solid;
+  }
+
+  div.main{
+    //                   Height  Pad  Border Margin
+    height: calc(100vh - (24px + 16px + 2px + 8px));
+    overflow-y: auto;
+  }
+
+  div.container.setting{
+    height: 120%;
+
+    h1{
+      margin: 8px;
+      text-align: center;
+    }
+
+    div.column{
+      padding: 16px;
+      margin: 0;
+      border: 0.5px solid #eee;
+      border-right: none;
+      border-left: none;
+
+      p.ttl{
+        margin: 0;
+        font-size: 18px;
+      }
+
+      p.detail{
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+      }
+
+      &.bar{
+        display: grid;
+        grid-template-areas: "ttl ch" "det ch";
+        grid-template-columns: 1fr 72px;
+        // grid-template-rows: 65% 35%;
+
+        p.ttl{
+          grid-area: ttl;
+        }
+
+        p.detail{
+          grid-area: det;
+        }
+
+        div.chkBox{
+          position: relative;
+          grid-area: ch;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+
+          div{
+            box-shadow: 0 0 3px 0 #aaa;
+          }
+        }
+      }
+
+      &.sns{
+
+        div.btn{
+          display: grid;
+          grid-template-columns: repeat(4, calc((100% - (16px*3)) / 4));
+          width: 100%;
+          height: 71px;
+          padding: 8px;
+          margin-top: 16px;
+          gap: 16px;
+
+          .btnC{
+            display: grid;
+            grid-template-areas: "btn" "link";
+            grid-template-rows: 50px 21px;
+
+            button{
+              grid-area: btn;
+              width: 100%;
+              height: 100%;
+              padding: 1px 6px;
+              font-size: 24px;
+              color: #fff;
+              border: 0;
+              border-radius: 3px;
+
+              i.mdi{
+                line-height: 50px;
+              }
+
+              &#mail{ background: #db4437; }
+
+              &#google{ background: #4295f4; }
+
+              &#twitter{ background: #1da1f2; }
+
+              &#facebook{ background: #1877f2; }
+            }
+
+            p.status{
+              grid-area: link;
+              margin: 0;
+              font-size: 14px;
+              color: #f00;
+              text-align: center;
+
+              &::before{
+                content: "未連携";
+              }
+
+              &.linked::before{
+                color: #4295f4;
+                content: "連携済";
+              }
+            }
+          }
+        }
+      }
+
+      &.id{
+
+        p.userId::before{
+          content: "会員ID: ";
+        }
+      }
+
+      &.change p.ttl{
+        color: #1b5e20;
+      }
+
+      &.lgout p.ttl{
+        color: #2979ff;
+      }
+
+      &.dl p.ttl{
+        color: #ff1507;
+      }
+    }
+  }
+}
