@@ -1,0 +1,90 @@
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-areas: "logo pname . settings";
+  grid-template-columns: 48px auto 1fr 48px;
+  width: 100vw;
+  height: 48px;
+  background: #ffcc65;
+  box-shadow: 0 0 5px 0 #000;
+
+  div{
+    grid-area: settings;
+    height: 48px;
+
+    i.open{
+      display: block;
+      margin: 12px auto;
+      font-size: 24px;
+    }
+
+    ul{
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: none;
+      padding: 3px;
+      margin: 0;
+      text-align: center;
+      background: #fff;
+      outline: 0;
+      box-shadow: 0 0 20px 0 #ccc;
+
+      li{
+        display: grid;
+        grid-template-areas: ". . . ." ". i t ." ". . . .";
+        grid-template-rows: 1fr auto 1fr;
+        grid-template-columns: 1fr 24px auto 1fr;
+        min-width: 30vw;
+        height: auto;
+        padding: 3px 8px;
+        font-size: 18px;
+        border: none;
+        transition: 0.5s;
+        gap: 8px;
+
+        i{ grid-area: i; }
+
+        span{ grid-area: t; }
+
+        &.back{ border-top: none; }
+
+        &:hover{ background: #eee; }
+      }
+
+      &.showing{ display: block; }
+    }
+  }
+
+  p{
+    z-index: 4;
+    grid-area: pname;
+    width: max-content;
+    margin: 0;
+    font-size: 32px;
+  }
+
+  img{
+    z-index: 4;
+    grid-area: logo;
+    width: auto;
+    height: 48px;
+  }
+
+  .setting{
+    display: grid;
+    grid-area: settings;
+    grid-template-areas: ". . ." ". i ." ". . .";
+    grid-template-rows: 1fr 24px 1fr;
+    grid-template-columns: 1fr 24px 1fr;
+
+    i{
+      grid-area: i;
+      font-size: 24px;
+    }
+  }
+}
