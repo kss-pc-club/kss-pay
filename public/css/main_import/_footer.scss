@@ -1,0 +1,49 @@
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "home store history";
+  grid-template-columns: repeat(3, calc(100% / 3));
+  width: 100vw;
+  height: 68px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 #aaa;
+
+  div{
+    box-sizing: border-box;
+    display: grid;
+    // grid-template-areas: ". i ." "p p p";
+    grid-template-areas: ". . ." ". i ." "p p p" ". . .";
+    // grid-template-rows: 36px 18px;
+    grid-template-rows: 10px 28px 18px 10px;
+    grid-template-columns: 0.5fr auto 0.5fr;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: #333;
+    // border: 0.5px solid #555;
+    border-right: none;
+    transition: 700ms;
+
+    &.showing{
+      color: #1a73e8;
+    }
+
+    i.mdi{
+      display: block;
+      grid-area: i;
+      margin: auto;
+      font-size: 28px;
+    }
+
+    p{
+      grid-area: p;
+      margin: 0;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
