@@ -43,6 +43,9 @@ function generateBarcode(num: number) {
     return
   }
 
+  // 全消し
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
   //----- フォーマット -----
   let num2str = String(num)
   const len = num2str.length
