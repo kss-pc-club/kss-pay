@@ -12,7 +12,7 @@
     "font-build": "cd public/fonts && npx @mdi/font-build"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.ts": [
       "eslint --fix"
     ],
     "*.{css,scss}": [
