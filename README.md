@@ -12,6 +12,15 @@
 4. 依存関係をインストール（`yarn install --frozen-lockfile`）
 5. ローカルサーバーを立てる（`yarn start`）
 6. 開発しましょう！
+7. 変更をステージ（`git add [変更したファイル]`）
+8. 変更をコミット（`git commit -m [変更についてのコメント]`）
+9. コミットをアップロード（`git push origin main`）
+10. 変更した箇所について [Issue](https://github.com/kss-pc-club/kss-pay/issues) を立ててから、[Pull Request](https://github.com/kss-pc-club/kss-pay/pulls) を送信します。
+
+## アイコンフォントのビルド方法
+1. アイコンSVGを `public/fonts/svg` に入れます
+2. `meta.json` にnameとcodepointを入力します（codepointは https://pictogrammers.github.io/@mdi/font/4.9.95/ を参照）。
+3. `yarn font-build` を実行
 
 ## 必要環境
 [SECURITY.md](./SECURITY.md) を見てください
