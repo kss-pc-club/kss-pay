@@ -5,7 +5,7 @@ main .container.history {
     ul {
 
       li {
-        grid-template-areas: "when . ." "when . cost" "where . cost" "where . .";
+        grid-template-areas: "when . ." "when . cost" "details . cost" "details . .";
         grid-template-columns: auto 1fr auto;
 
         p{
@@ -17,19 +17,13 @@ main .container.history {
           font-size: 22px;
         }
 
-        p.where{
-          grid-area: where;
+        p.details{
+          grid-area: details;
           font-size: 18px;
-        }
 
-        p.what{
-          display: none;
-          grid-area: what;
-        }
-
-        p.amount{
-          display: none;
-          grid-area: amount;
+          &::after{
+            content: attr(data-where);
+          }
         }
 
         p.cost{
@@ -40,9 +34,9 @@ main .container.history {
         }
 
         &.showing{
-          grid-template-areas: "when when when" "where what amount" "cost cost cost";
-          grid-template-columns: max-content max-content 1fr;
+          grid-template-areas: "when" "details" "cost";
           gap: 4px;
+          grid-template-columns: 100%;
 
           p{
             display: block;
@@ -52,22 +46,12 @@ main .container.history {
             font-size: 22px;
           }
 
-          p.where{
+          p.details{
             font-size: 18px;
 
-            &::after{ content: " で "; }
-          }
-
-          p.what{
-            font-size: 18px;
-
-            &::after{ content: " を "; }
-          }
-
-          p.amount{
-            font-size: 18px;
-
-            &::after{ content: " 個購入"; }
+            &::after{
+              content: attr(data-where) " で " attr(data-what) " を " attr(data-amount) " 個 購入";
+            }
           }
 
           p.cost{

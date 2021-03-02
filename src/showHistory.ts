@@ -10,16 +10,21 @@ const historyItemClicked = async function (this: HTMLElement) {
     await sleep(300)
     $(this).find('p.cost').fadeIn(200)
     $(this).removeClass('showing')
+    await sleep(210)
+    $(this).removeAttr('style')
   } else {
     // 開く
+    // 一度開いて高さを取得
+    const height = $(this).addClass('showing').outerHeight()
+    $(this).removeClass('showing')
+
     $(this).find('p.cost').fadeOut(200)
     await sleep(200)
-    $(this).animate({ height: 125 }, 500)
+    $(this).animate({ height: height }, 500)
     $(this).addClass('showing')
-    $(this).find('p.what').fadeIn(100)
-    $(this).find('p.amount').fadeIn(100)
     await sleep(50) // ここでSleepするのは Fadeoutと同じ200msちょうどにすると、そのあと表示されなくなるため
-    $(this).find('p.cost').show()
+    $(this).removeAttr('style')
+    $(this).find('p.cost').fadeIn(500)
   }
 }
 
