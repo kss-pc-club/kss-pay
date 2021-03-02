@@ -1,0 +1,44 @@
+main div.container.store{
+
+  &> p{
+    margin: 1em 4px;
+  }
+
+  ul.store.column{
+
+    li{
+      display: grid;
+      grid-template-areas: "cls ." "cls where" "cls ." "_name _name";
+      grid-template-columns: auto 1fr;
+      // grid-template-rows: ;
+
+      p{ margin: 0; }
+
+      p.cls{
+        grid-area: cls;
+        font-size: 22px;
+      }
+
+      p.name{
+        grid-area: _name;
+        margin-top: 6px;
+        font-size: 16px;
+        color: #555;
+      }
+
+      p.where{
+        grid-area: where;
+        padding-left: 16px;
+        font-size: 15px;
+
+        &::before{
+          content: "@ ";
+        }
+
+        &::after{
+          content: attr(data-place);
+        }
+      }
+    }
+  }
+}
