@@ -1,0 +1,111 @@
+@import "main_import/import";
+@import "main_import/common";
+@import "main_import/footer";
+@import "main_import/loader";
+@import "main_import/modal";
+@import "main_import/placeholder";
+@import "main_import/settings";
+@import "main_import/toast";
+@import "main_import/container_home";
+@import "main_import/container_store";
+@import "main_import/container_history";
+@import "main_import/font";
+
+main{
+  padding: 24px;
+  margin-top: 55px;
+
+  *{ outline: none; }
+
+  & > div.container{
+    position: relative;
+    overflow-y: visible;
+    transition: 700ms;
+    animation: opa 700ms;
+
+    .container{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px 0 #3336;
+    }
+
+    h1{
+      z-index: 2;
+      margin: 8px 0;
+      // position: sticky;
+      // top: -8px;
+      background: #fff;
+      box-shadow: 0 5px 5px -5px #888;
+    }
+
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li{
+        display: grid;
+        padding: 4px;
+        border: 0.5px solid #eee;
+        border-right: none;
+        border-left: none;
+      }
+    }
+  }
+
+  & > div.container:not(.show){
+    display: none;
+  }
+
+  & > div.container.show:not(.showing){
+    opacity: 0;
+  }
+
+
+  p#help{
+    display: grid;
+    grid-template-areas: "i m . ." "i m t ." "i m . .";
+    grid-template-rows: 1fr 12px 1fr;
+    grid-template-columns: auto 4px auto 1fr;
+    height: 24px;
+    font-size: 14px;
+
+    i{
+      grid-area: i;
+    }
+
+    span{
+      grid-area: t;
+      line-height: 14px;
+    }
+  }
+}
+
+i.mdi, i.mdi::before{
+  // https://material.io/resources/icons/ と @mdi/font-build によるずれがあるため、「font-size」「line-height」「transform」を加えた
+  display: inline-block;
+  // font-size: 24px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  // line-height: 1;
+  line-height: 24px;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  transform: translateY(-2px);
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes opa{
+
+  0%{ opacity: 0; }
+
+  100%{ opacity: 1; }
+}

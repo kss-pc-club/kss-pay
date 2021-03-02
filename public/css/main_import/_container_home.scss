@@ -1,0 +1,87 @@
+@mixin btn($bgcolor) {
+  background: $bgcolor;
+
+  &:hover, &:active{
+    background: darken($bgcolor, 15%);
+  }
+
+  &:disabled{
+    background: lighten($bgcolor, 20%);
+  }
+}
+
+main div.container.home{
+  // @include grid(". sync" "ba ba" "hi hi", 50% 50%);
+  // grid-template-rows: auto auto 1fr;
+  --wide: calc((100vw - (8px + 24px) *2));
+  --high: calc(var(--wide) * 0.63);
+
+  div.barcode.container{
+    position: relative;
+    width: var(--wide);
+    height: var(--high);
+    margin: auto;
+    background: #fff;
+    transition-duration: 1s;
+
+    canvas#barcode{
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      width: 80%;
+      height: 160px;
+      margin: 0;
+      opacity: 0;
+      transition-delay: 295ms;
+      transform: rotateY(180deg);
+    }
+
+    p{
+      opacity: 1;
+      transition-delay: 295ms;
+    }
+
+    &.rotate{
+      transform: rotateY(180deg);
+
+      canvas#barcode{
+        opacity: 1;
+        transition-delay: 295ms;
+      }
+
+      p{
+        opacity: 0;
+        transition-delay: 295ms;
+      }
+    }
+
+    p.rem{
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    p.money{
+      position: relative;
+      height: 96px;
+      margin: calc((var(--high) - 96px - 16px) / 2) auto;
+      font-size: 64px;
+      text-align: center;
+    }
+
+    p.unit{
+      position: absolute;
+      right: 16px;
+      bottom: calc((var(--high) - 96px) / 2);
+      margin: 0;
+      font-size: 24px;
+    }
+  }
+
+  p.tap2show{
+    font-size: 12px;
+    text-align: center;
+  }
+}
