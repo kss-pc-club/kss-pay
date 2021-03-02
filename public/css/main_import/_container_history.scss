@@ -1,0 +1,81 @@
+main .container.history {
+
+  div.history {
+
+    ul {
+
+      li {
+        grid-template-areas: "when . ." "when . cost" "where . cost" "where . .";
+        grid-template-columns: auto 1fr auto;
+
+        p{
+          margin: 0;
+        }
+
+        p.when{
+          grid-area: when;
+          font-size: 22px;
+        }
+
+        p.where{
+          grid-area: where;
+          font-size: 18px;
+        }
+
+        p.what{
+          display: none;
+          grid-area: what;
+        }
+
+        p.amount{
+          display: none;
+          grid-area: amount;
+        }
+
+        p.cost{
+          grid-area: cost;
+          font-size: 32px;
+
+          &::before{ content: "￥"; }
+        }
+
+        &.showing{
+          grid-template-areas: "when when when" "where what amount" "cost cost cost";
+          grid-template-columns: max-content max-content 1fr;
+          gap: 4px;
+
+          p{
+            display: block;
+          }
+
+          p.when{
+            font-size: 22px;
+          }
+
+          p.where{
+            font-size: 18px;
+
+            &::after{ content: " で "; }
+          }
+
+          p.what{
+            font-size: 18px;
+
+            &::after{ content: " を "; }
+          }
+
+          p.amount{
+            font-size: 18px;
+
+            &::after{ content: " 個購入"; }
+          }
+
+          p.cost{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+}

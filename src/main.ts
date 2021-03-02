@@ -4,6 +4,7 @@ import './commonFileLoad'
 import './serviceWorkerRegister'
 import './footer'
 import './accountLink'
+import './showHistory'
 
 import $ from 'jquery'
 
