@@ -1,6 +1,7 @@
 //----- ヘッダーDOM操作 -----//
 import $ from 'jquery'
 
+import { firebase } from './firebase'
 import { sleep } from './functions'
 import { sync } from './syncData'
 
@@ -21,6 +22,11 @@ const headerOnClick = () => {
   $('header ul li#sync').on('click', sync)
   $('header ul li#settings').on('click', () => {
     $('div.setting_container').show().animate({ top: 20 }, 700)
+  })
+  $('li#logout').on('click', () => {
+    if (confirm('ログアウトしますか？')) {
+      firebase.auth().signOut().catch(console.error)
+    }
   })
 }
 

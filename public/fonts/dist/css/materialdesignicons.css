@@ -66,6 +66,10 @@
   content: "\F1EE";
 }
 
+.mdi-logout::before {
+  content: "\F343";
+}
+
 .mdi-blank::before {
   content: "\F68C";
   visibility: hidden;

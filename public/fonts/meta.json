@@ -34,4 +34,7 @@
 }, {
   "name": "mail",
   "codepoint": "F1EE"
+}, {
+  "name": "logout",
+  "codepoint": "F343"
 }]
