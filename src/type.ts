@@ -37,6 +37,13 @@ type userDBData =
   | {
       barcode: string
       money: number
+      history: {
+        time: string
+        place: string
+        item: string
+        amount: number
+        cost: number
+      }[]
     }
   | undefined
 
