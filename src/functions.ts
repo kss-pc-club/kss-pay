@@ -53,4 +53,26 @@ const toast = async (ttl: string): Promise<void> => {
   $('.toast').fadeOut()
 }
 
-export { sleep, modal, toast }
+/**
+ * POSTでデータを送信します
+ * @param url - 送信先URL
+ * @param data - 送信するデータ（Object形式）
+ */
+const FetchPOST = async (url: string, data: { [key: string]: string }) => {
+  const params: string[] = []
+  for (const [key, val] of Object.entries(data)) {
+    params.push(`${key}=${val}`)
+  }
+  return await fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    credentials: 'include',
+    body: params.join('&'),
+    headers: {
+      Accept: 'application/json',
+      'Content-type': 'application/x-www-form-urlencoded',
+    },
+  })
+}
+
+export { sleep, modal, toast, FetchPOST }

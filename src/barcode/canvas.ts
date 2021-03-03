@@ -32,6 +32,33 @@ function draw1Line(ctx: CanvasRenderingContext2D, ...x: number[]) {
   }
 }
 
+/**
+ * 読み込み中であることを知らせます
+ */
+function loadingBarcode() {
+  const canvas = <HTMLCanvasElement>(
+    document.querySelector(settings.canvasSelector)
+  )
+  const ctx = canvas.getContext('2d')
+  if (!canvas || !ctx) {
+    console.error('指定されたセレクタに該当するcanvasが存在しません')
+    return
+  }
+
+  // 全消し
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  // 文字を表示
+  ctx.font = '24px "Product Sans", sans-serif'
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText('Loading...', 118, 74)
+}
+
+/**
+ * バーコードを生成して表示します
+ * @param num - 表示したいバーコード番号（13桁）
+ */
 function generateBarcode(num: number) {
   //----- 要素の取得 -----
   const canvas = <HTMLCanvasElement>(
@@ -143,4 +170,4 @@ function generateBarcode(num: number) {
   }
 }
 
-export { generateBarcode }
+export { generateBarcode, loadingBarcode }

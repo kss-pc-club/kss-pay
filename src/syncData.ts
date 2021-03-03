@@ -3,19 +3,40 @@ import 'firebase/firestore'
 
 import $ from 'jquery'
 
-import { generateBarcode } from './barcode/canvas'
+import { generateBarcode, loadingBarcode } from './barcode/canvas'
 import { firebase } from './firebase'
+import { FetchPOST, toast } from './functions'
 import { userDBData } from './type'
 
-const sync = () => {
+const sync = async (): Promise<void> => {
   // 更新中であることを知らせるUI
   $('div.container.barcode p.money').html(
     '<span class="placeholder"><span class="placeholder-bg"></span></span>'
   )
   $('div.container.barcode p.unit').hide()
+  loadingBarcode()
+
+  const uId = firebase.auth().currentUser?.uid
+  if (!uId) {
+    void toast('更新に失敗しました。')
+    return
+  }
+
+  // バーコード再生成
+  const res = await FetchPOST(
+    'https://admin.fes.kss-pc.club/pay/barcodeRegenerate',
+    { uid: uId }
+  )
+
+  // 新規ユーザー
+  if (res.status === 400) {
+    await FetchPOST('https://admin.fes.kss-pc.club/pay/userInit', { uid: uId })
+    await FetchPOST('https://admin.fes.kss-pc.club/pay/barcodeRegenerate', {
+      uid: uId,
+    })
+  }
 
   // 更新処理
-  const uId = firebase.auth().currentUser?.uid
   firebase
     .firestore()
     .collection('users')
