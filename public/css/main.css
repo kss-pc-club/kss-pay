@@ -21,7 +21,7 @@ a {
 input, select {
   width: 100%;
   height: 24px;
-  margin: 8px 0px;
+  margin: 8px 0;
 }
 
 footer {
@@ -461,7 +461,7 @@ main div.toast .cont p {
 }
 
 main div.container.home {
-  --wide: calc((100vw - (8px + 24px)*2));
+  --wide: calc((100vw - (8px + 24px) *2));
   --high: calc(var(--wide) * 0.63);
 }
 
@@ -516,7 +516,7 @@ main div.container.home div.barcode.container p.rem {
   position: absolute;
   top: 16px;
   left: 16px;
-  margin: 0px;
+  margin: 0;
   font-size: 18px;
 }
 
@@ -585,10 +585,6 @@ main div.container.store ul.store.column li p.where {
 
 main div.container.store ul.store.column li p.where::before {
   content: "@ ";
-}
-
-main div.container.store ul.store.column li p.where::after {
-  content: attr(data-place);
 }
 
 main .container.history div.history ul li {
@@ -694,16 +690,16 @@ main > div.container .container {
   padding: 13px;
   overflow: hidden;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 2px 10px 0px #3336;
-          box-shadow: 0px 2px 10px 0px #3336;
+  -webkit-box-shadow: 0 2px 10px 0 #3336;
+          box-shadow: 0 2px 10px 0 #3336;
 }
 
 main > div.container h1 {
   z-index: 2;
-  margin: 8px 0px;
+  margin: 8px 0;
   background: #fff;
-  -webkit-box-shadow: 0px 5px 5px -5px #888;
-          box-shadow: 0px 5px 5px -5px #888;
+  -webkit-box-shadow: 0 5px 5px -5px #888;
+          box-shadow: 0 5px 5px -5px #888;
 }
 
 main > div.container ul {
