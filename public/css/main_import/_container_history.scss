@@ -50,7 +50,7 @@ main .container.history {
             font-size: 18px;
 
             &::after{
-              content: attr(data-where) " で " attr(data-what) " を " attr(data-amount) " 個 購入";
+              content: attr(data-where) " で " attr(data-what) "計 " attr(data-amount) " 個 購入";
             }
           }
 

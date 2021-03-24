@@ -646,7 +646,7 @@ main .container.history div.history ul li.showing p.details {
 }
 
 main .container.history div.history ul li.showing p.details::after {
-  content: attr(data-where) " で " attr(data-what) " を " attr(data-amount) " 個 購入";
+  content: attr(data-where) " で " attr(data-what) "計 " attr(data-amount) " 個 購入";
 }
 
 main .container.history div.history ul li.showing p.cost {
