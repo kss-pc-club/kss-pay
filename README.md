@@ -13,12 +13,13 @@
 2. Forkしたプロジェクトをダウンロードします（`git clone https://github.com/(あなたのユーザー名)/kss-pay.git`）
 3. [Node.js](https://nodejs.org/ja/) と [yarn](https://classic.yarnpkg.com/ja/) をインストール
 4. 依存関係をインストール（`yarn install --frozen-lockfile`）
-5. ローカルサーバーを立てる（`yarn start`）
-6. 開発しましょう！
-7. 変更をステージ（`git add [変更したファイル]`）
-8. 変更をコミット（`git commit -m [変更についてのコメント]`）
-9. コミットをアップロード（`git push origin main`）
-10. 変更した箇所について [Issue](https://github.com/kss-pc-club/kss-pay/issues) を立ててから、[Pull Request](https://github.com/kss-pc-club/kss-pay/pulls) を送信します。
+5. Firebaseにログイン（`yarn firebase:login`）
+6. ローカルサーバーを立てる（`yarn start`）
+7. 開発しましょう！
+8. 変更をステージ（`git add [変更したファイル]`）
+9. 変更をコミット（`git commit -m [変更についてのコメント]`）
+10. コミットをアップロード（`git push origin main`）
+11. 変更した箇所について [Issue](https://github.com/kss-pc-club/kss-pay/issues) を立ててから、[Pull Request](https://github.com/kss-pc-club/kss-pay/pulls) を送信します。
 
 ## アイコンフォントのビルド方法
 1. アイコンSVGを `public/fonts/svg` に入れます

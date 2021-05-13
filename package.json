@@ -6,10 +6,11 @@
   "author": "Asa <26807394+a01sa01to@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "firebase serve",
+    "start": "yarn -s run firebase serve",
+    "firebase:login": "yarn -s run firebase login",
     "build": "webpack",
     "eslint:fix": "eslint --fix src/**/*.{js,ts}",
-    "font-build": "cd public/fonts && npx @mdi/font-build"
+    "font-build": "cd public/fonts && yarn -s run @mdi/font-build"
   },
   "lint-staged": {
     "*.ts": [
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "firebase": "^8.2.1",
+    "firebase-tools": "^9.10.2",
     "firebaseui": "^4.7.1",
     "jquery": "^3.5.1"
   },
