@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-./pre-commit.sh && npx lint-staged
+./pre-commit.sh && yarn -s run lint-staged
