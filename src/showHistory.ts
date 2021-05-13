@@ -1,7 +1,7 @@
 //----- Footer -> 履歴 -----//
 import $ from 'jquery'
-
 import { sleep } from './functions'
+
 
 const historyItemClicked = async function (this: HTMLElement) {
   if ($(this).hasClass('showing')) {
@@ -28,6 +28,5 @@ const historyItemClicked = async function (this: HTMLElement) {
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  $('div.container.history ul li').on('click', historyItemClicked)
-})
+export { historyItemClicked }
+
