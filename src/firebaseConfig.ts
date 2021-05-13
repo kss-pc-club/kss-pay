@@ -2,7 +2,7 @@
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDL9XGWSENz1_7P3KoFFT3rKHv4aBuQGGs',
-  authDomain: 'kss-pay-f0a57.firebaseapp.com',
+  authDomain: 'auth.pay.kss-pc.club',
   databaseURL: 'https://kss-pay-f0a57.firebaseio.com',
   projectId: 'kss-pay-f0a57',
   storageBucket: 'kss-pay-f0a57.appspot.com',
@@ -11,3 +11,4 @@ const firebaseConfig = {
 }
 
 export { firebaseConfig }
+
