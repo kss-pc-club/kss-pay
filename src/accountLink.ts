@@ -20,7 +20,6 @@ const linkFlow = (
     user
       .linkWithPopup(provider)
       .then((result) => {
-        console.log('SUCCESS!', result)
         void toast('アカウントの紐づけを完了しました！')
         $(elem).next('p.status').addClass('linked')
       })

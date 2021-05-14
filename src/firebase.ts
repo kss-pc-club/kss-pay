@@ -31,7 +31,6 @@ auth.onAuthStateChanged((user) => {
       location.pathname = '/'
       return
     }
-    console.log(user)
     userData = {
       name: user.displayName,
       uid: user.uid,
@@ -50,7 +49,6 @@ auth.onAuthStateChanged((user) => {
       mailVerified: user.emailVerified,
     }
 
-    console.log(userData)
     firebaseUserDataLoaded()
   } else {
     // 非ログイン状態

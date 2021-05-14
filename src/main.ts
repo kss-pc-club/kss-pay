@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // <main>の高さ = window - <header> - <footer>
   const headerHeight = $('header').outerHeight()
   const footerHeight = $('footer').outerHeight()
-  console.log(headerHeight, footerHeight, window.innerHeight)
   if (headerHeight && footerHeight) {
     $('main')
       .css('margin-top', headerHeight)
@@ -60,7 +59,6 @@ window.addEventListener('load', async () => {
   $('div.loader_container').remove()
 
   // 遊び心。Self XSS詐欺をやめようという。
-  // console.clear()
   console.log(
     '%cSTOP!!%c\nあなたが現在開いているのは、開発者向けのブラウザツールです。ユーザーが開くべきものではありません。\nここに何かをコピー・貼り付けするように言われた場合、第三者があなたのアカウントへのアクセスを得るための%c詐欺・不正行為%cです。\n\n心当たりのない方は、特別棟2F奥にあるパソコン室までお訪ねください。\n心当たりがある方も、パソコン室に来なさい（#^ω^）',
     'color: #f00; font-size: 64px;',
