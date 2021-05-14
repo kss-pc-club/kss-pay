@@ -10,7 +10,8 @@
     "firebase:login": "yarn -s run firebase login",
     "build": "webpack",
     "eslint:fix": "eslint --fix src/**/*.{js,ts}",
-    "font-build": "cd public/fonts && yarn -s run @mdi/font-build"
+    "font-build": "cd public/fonts && yarn -s run @mdi/font-build",
+    "husky:prepare": "yarn -s run husky install"
   },
   "lint-staged": {
     "*.ts": [
