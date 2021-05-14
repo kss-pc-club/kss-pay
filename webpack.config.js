@@ -2,14 +2,17 @@ const path = require('path')
 
 module.exports = {
   resolve: {
-    modules: ['node_modules', 'es2015', 'ts-loader'],
-    extensions: ['.ts','.js']
+    modules: ['node_modules', 'es2015', 'ts-loader','ignore-loader'],
+    extensions: ['.ts','.js','.d.ts']
   },
   module: {
     rules: [{
-      test: /\.ts/,
-      loader: 'ts-loader'
-    }]
+      test: /(?<!\.d)\.ts/,
+      loader: 'ts-loader',
+    },{
+      test: /\.d\.ts/,
+      loader: 'ignore-loader',
+    },]
   },
   entry: './src/main.ts',
   output: {

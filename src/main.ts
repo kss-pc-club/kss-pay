@@ -1,9 +1,9 @@
 //----- メインファイル -----//
-import './commonFileLoad'
-// import './login'
-import './serviceWorkerRegister'
-import './footer'
 import './accountLink'
+import './commonFileLoad'
+import './footer'
+import './login'
+import './serviceWorkerRegister'
 import './showHistory'
 
 import $ from 'jquery'
@@ -13,6 +13,7 @@ import { modal, sleep, toast } from './functions'
 import { sync } from './syncData'
 // import { generateBarcode } from './barcode/canvas'
 import { providers } from './type'
+
 window.addEventListener('offline', () => {
   location.href = './onlineCheck'
 })
@@ -120,7 +121,7 @@ const firebaseUserDataLoaded = () => {
   }
 
   // 同期させる
-  sync()
+  void sync()
 }
 
 export { firebaseUserDataLoaded }
