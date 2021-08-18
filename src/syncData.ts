@@ -4,10 +4,12 @@ import 'firebase/firestore'
 import $ from 'jquery'
 
 import { generateBarcode, loadingBarcode } from './barcode/canvas'
+import { barcodeRegenerate } from './barcodeRegenerate'
 import { firebase } from './firebase'
-import { FetchPOST, toast } from './functions'
+import { toast } from './functions'
 import { historyItemClicked } from './showHistory'
 import { userDBData } from './type'
+import { userInitialize } from './userInitialize'
 
 const sync = async (): Promise<void> => {
   // 更新中であることを知らせるUI
@@ -28,22 +30,12 @@ const sync = async (): Promise<void> => {
   }
 
   // バーコード再生成
-  const res = await FetchPOST(
-    'https://admin.festival.kss-pc.club/pay/barcodeRegenerate',
-    { uid: uId }
-  )
+  const res = await barcodeRegenerate()
 
   // 新規ユーザー
-  if (res.status === 400) {
-    await FetchPOST('https://admin.festival.kss-pc.club/pay/userInit', {
-      uid: uId,
-    })
-    await FetchPOST(
-      'https://admin.festival.kss-pc.club/pay/barcodeRegenerate',
-      {
-        uid: uId,
-      }
-    )
+  if (!res) {
+    await userInitialize()
+    await barcodeRegenerate()
   }
 
   // 更新処理
