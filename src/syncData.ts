@@ -1,13 +1,13 @@
 //----- ユーザーデータを読み込む処理 -----//
 import 'firebase/firestore'
+
 import $ from 'jquery'
+
 import { generateBarcode, loadingBarcode } from './barcode/canvas'
 import { firebase } from './firebase'
 import { FetchPOST, toast } from './functions'
 import { historyItemClicked } from './showHistory'
 import { userDBData } from './type'
-
-
 
 const sync = async (): Promise<void> => {
   // 更新中であることを知らせるUI
@@ -29,16 +29,21 @@ const sync = async (): Promise<void> => {
 
   // バーコード再生成
   const res = await FetchPOST(
-    'https://admin.fes.kss-pc.club/pay/barcodeRegenerate',
+    'https://admin.festival.kss-pc.club/pay/barcodeRegenerate',
     { uid: uId }
   )
 
   // 新規ユーザー
   if (res.status === 400) {
-    await FetchPOST('https://admin.fes.kss-pc.club/pay/userInit', { uid: uId })
-    await FetchPOST('https://admin.fes.kss-pc.club/pay/barcodeRegenerate', {
+    await FetchPOST('https://admin.festival.kss-pc.club/pay/userInit', {
       uid: uId,
     })
+    await FetchPOST(
+      'https://admin.festival.kss-pc.club/pay/barcodeRegenerate',
+      {
+        uid: uId,
+      }
+    )
   }
 
   // 更新処理
@@ -82,4 +87,3 @@ const sync = async (): Promise<void> => {
 }
 
 export { sync }
-
