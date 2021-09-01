@@ -62,10 +62,20 @@ const sync = async (): Promise<void> => {
           </li>`)
         } else {
           userData.history.forEach((hist) => {
+            const when = hist.time.toDate()
             $('div.container.history ul').append(`
             <li>
-              <p class="when">${hist.time}</p>
-              <p class="details" data-where="${hist.place}" data-what="${hist.item}" data-amount="${hist.amount}"></p>
+              <p class="when">${when.getFullYear()}.${String(
+              when.getMonth() + 1
+            ).padStart(2, '0')}.${String(when.getDate()).padStart(
+              2,
+              '0'
+            )} ${String(when.getHours()).padStart(2, '0')}:${String(
+              when.getMinutes()
+            ).padStart(2, '0')}</p>
+              <p class="details" data-where="${hist.place}" data-what="${
+              hist.item
+            }" data-amount="${hist.amount}"></p>
               <p class="cost">${hist.cost}</p>
             </li>`)
           })

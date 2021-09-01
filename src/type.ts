@@ -38,7 +38,7 @@ type userDBData =
       barcode: string
       money: number
       history: {
-        time: string
+        time: firebase.firestore.Timestamp
         place: string
         item: string
         amount: number
