@@ -61,6 +61,7 @@ const sync = async (): Promise<void> => {
             <p class="details" data-where="KSS Payで決済してみましょう！"></p>
           </li>`)
         } else {
+          userData.history.sort((a, b) => b.time.toMillis() - a.time.toMillis())
           userData.history.forEach((hist) => {
             const when = hist.time.toDate()
             $('div.container.history ul').append(`
