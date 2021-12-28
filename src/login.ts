@@ -1,7 +1,6 @@
-import './firebaseui/@types/index'
+import { auth } from 'firebaseui'
 
 import { firebase } from './firebase'
-import { auth } from './firebaseui/esm__ja'
 
 window.addEventListener('DOMContentLoaded', () => {
   if (location.pathname === '/login') {
