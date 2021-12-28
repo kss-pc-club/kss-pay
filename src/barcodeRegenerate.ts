@@ -19,7 +19,7 @@ const randomBarcode = () => {
 }
 
 const barcodeRegenerate = async () => {
-  console.log(userData)
+  // console.log(userData)
   const db = firebase.firestore()
   const uid = userData.uid
   const user = db.collection('users').doc(uid || undefined)
