@@ -1,5 +1,5 @@
 //----- ユーザーデータを読み込む処理 -----//
-import 'firebase/firestore'
+import 'firebase/compat/firestore'
 
 import $ from 'jquery'
 

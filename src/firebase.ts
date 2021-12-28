@@ -1,8 +1,9 @@
 //----- Firebase関連の処理 -----//
+// FirebaseUIが未対応のため、しばらくはfirebase/compatを使用
+// ref: https://firebase.google.com/docs/web/modular-upgrade
+import 'firebase/compat/auth'
 
-import 'firebase/auth'
-
-import firebase from 'firebase/app'
+import firebase from 'firebase/compat/app'
 
 import { firebaseConfig } from './firebaseConfig'
 import { firebaseUserDataLoaded } from './main'
