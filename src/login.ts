@@ -1,30 +1,27 @@
-import { auth } from 'firebaseui'
+import {
+  FacebookAuthProvider,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  TwitterAuthProvider,
+} from 'firebase/auth'
+import $ from 'jquery'
 
-import { firebase } from './firebase'
+const auth = getAuth()
+const GProvider = new GoogleAuthProvider()
+const FProvider = new FacebookAuthProvider()
+const TProvider = new TwitterAuthProvider()
 
 window.addEventListener('DOMContentLoaded', () => {
   if (location.pathname === '/login') {
-    const ui = new auth.AuthUI(firebase.auth())
-    ui.start('#firebaseui-auth-container', {
-      signInOptions: [
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      ],
-      callbacks: {
-        signInSuccessWithAuthResult: () => {
-          return true
-        },
-        signInFailure: (err) => {
-          console.error(err)
-        },
-        uiShown: () => {
-          document.getElementById('loading')!.style.display = 'none'
-        },
-      },
-      signInSuccessUrl: '/',
-      privacyPolicyUrl: '/policy',
+    $('#google-login').on('click', () => {
+      signInWithPopup(auth, GProvider).catch(console.error)
+    })
+    $('#facebook-login').on('click', () => {
+      signInWithPopup(auth, FProvider).catch(console.error)
+    })
+    $('#twitter-login').on('click', () => {
+      signInWithPopup(auth, TProvider).catch(console.error)
     })
   }
 })

@@ -1,0 +1,2 @@
+body#login main button{display:block;margin:1em auto;padding:0.5em 1em;text-align:center;height:48px;border-radius:4px;border:1px solid #ccc;color:#fff;width:250px}body#login main button#google-login{background:#4285f4}body#login main button#facebook-login{background:#3b5998}body#login main button#twitter-login{background:#55acee}body#login main button i.mdi,body#login main button i.mdi::before{font-size:18px;-webkit-transform:translateY(0);transform:translateY(0);margin-right:2px}
+/*# sourceMappingURL=login.css.map */

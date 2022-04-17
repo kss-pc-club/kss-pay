@@ -2,17 +2,25 @@
 <html lang="ja">
   <head>
     <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/login.css" rel="stylesheet">
     <title>Log in - KSS Pay</title>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
     <script src="./bundle.js"></script>
   </head>
-  <body>
-
+  <body id="login">
     <header></header>
     <main>
-      <p id="loading">Loading...</p>
-      <div id="firebaseui-auth-container"></div>
+      <button id="google-login">
+        <mdi-icon icon="google"></mdi-icon>
+        Google で ログイン
+      </button>
+      <button id="facebook-login">
+        <mdi-icon icon="facebook"></mdi-icon>
+        Facebook で ログイン
+      </button>
+      <button id="twitter-login">
+        <mdi-icon icon="twitter"></mdi-icon>
+        Twitter で ログイン
+      </button>
     </main>
   </body>
 </html>

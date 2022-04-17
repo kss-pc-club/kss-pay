@@ -1,0 +1,31 @@
+body#login main {
+  button {
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    text-align: center;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: #fff;
+    width: 250px;
+
+    &#google-login{
+      background: #4285f4;
+    }
+
+    &#facebook-login{
+      background: #3b5998;
+    }
+
+    &#twitter-login{
+      background: #55acee;
+    }
+
+    i.mdi, i.mdi::before {
+      font-size: 18px;
+      transform: translateY(0);
+      margin-right: 2px;
+    }
+  }
+}
