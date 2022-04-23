@@ -84,7 +84,7 @@ main div.setting_container{
 
         div.btn{
           display: grid;
-          grid-template-columns: repeat(4, calc((100% - (16px*3)) / 4));
+          grid-template-columns: repeat(3, calc((100% - (16px*2)) / 3));
           width: 100%;
           height: 71px;
           padding: 8px;
@@ -109,8 +109,6 @@ main div.setting_container{
               i.mdi{
                 line-height: 50px;
               }
-
-              &#mail{ background: #db4437; }
 
               &#google{ background: #4295f4; }
 
