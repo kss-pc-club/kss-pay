@@ -1,9 +1,12 @@
 //----- Firebase関連の処理 -----//
-// FirebaseUIが未対応のため、しばらくはfirebase/compatを使用
-// ref: https://firebase.google.com/docs/web/modular-upgrade
-import 'firebase/compat/auth'
-
-import firebase from 'firebase/compat/app'
+import { initializeApp } from 'firebase/app'
+import {
+  browserLocalPersistence,
+  getAuth,
+  onAuthStateChanged,
+  setPersistence,
+} from 'firebase/auth'
+import { initializeFirestore } from 'firebase/firestore'
 
 import { firebaseConfig } from './firebaseConfig'
 import { firebaseUserDataLoaded } from './main'
@@ -21,11 +24,12 @@ let userData: usrAuthData = {
 }
 
 // Firebaseを初期化
-firebase.initializeApp(firebaseConfig)
-const auth = firebase.auth()
+export const firebaseApp = initializeApp(firebaseConfig)
+export const firestore = initializeFirestore(firebaseApp, {})
+export const auth = getAuth(firebaseApp)
 
 // ログイン状態が変更されたときの処理
-auth.onAuthStateChanged((user) => {
+onAuthStateChanged(auth, (user) => {
   if (user) {
     // ログイン状態
     if (location.pathname === '/login') {
@@ -63,6 +67,6 @@ auth.onAuthStateChanged((user) => {
 auth.languageCode = 'ja'
 
 // ログイン状態の保持期間の設定
-auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(console.error)
+setPersistence(auth, browserLocalPersistence).catch(console.error)
 
-export { firebase, userData, auth }
+export { userData }

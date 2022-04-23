@@ -1,6 +1,7 @@
 //----- ユーザーのバーコードを再生成する -----//
+import { collection, doc, getDoc, setDoc } from 'firebase/firestore'
 
-import { firebase, userData } from './firebase'
+import { firebaseApp, firestore, userData } from './firebase'
 
 const randomBarcode = () => {
   // 重複が生じた場合、会計時に更新してもらう
@@ -20,10 +21,9 @@ const randomBarcode = () => {
 
 const barcodeRegenerate = async () => {
   // console.log(userData)
-  const db = firebase.firestore()
   const uid = userData.uid
-  const user = db.collection('users').doc(uid || undefined)
-  if (!(await user.get()).exists) {
+  const user = doc(collection(firestore, 'users'), uid || undefined)
+  if (!(await getDoc(user)).exists) {
     // User does not exist
     return false
   }
@@ -32,7 +32,7 @@ const barcodeRegenerate = async () => {
     if (!newBarcode) {
       continue
     }
-    await user.set({ barcode: newBarcode }, { merge: true })
+    await setDoc(user, { barcode: newBarcode }, { merge: true })
     break
   }
   return true

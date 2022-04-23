@@ -1,11 +1,10 @@
 //----- ユーザーデータを読み込む処理 -----//
-import 'firebase/compat/firestore'
-
+import { collection, doc, getDoc } from 'firebase/firestore'
 import $ from 'jquery'
 
 import { generateBarcode, loadingBarcode } from './barcode/canvas'
 import { barcodeRegenerate } from './barcodeRegenerate'
-import { firebase } from './firebase'
+import { auth, firestore } from './firebase'
 import { toast } from './functions'
 import { historyItemClicked } from './showHistory'
 import { userDBData } from './type'
@@ -23,27 +22,27 @@ const sync = async (): Promise<void> => {
     `<li><p class="when">Loading...</p></li>`
   )
 
-  const uId = firebase.auth().currentUser?.uid
+  const uId = auth.currentUser?.uid
   if (!uId) {
     void toast('更新に失敗しました。')
     return
   }
 
-  // バーコード再生成
-  const res = await barcodeRegenerate()
+  const usersCollection = collection(firestore, 'users')
+  const userDoc = doc(usersCollection, uId)
 
+  // 残高取得
+  const res = (await getDoc(userDoc)).data() as userDBData
   // 新規ユーザー
-  if (!res) {
+  if (!res || !res.initialized) {
     await userInitialize()
-    await barcodeRegenerate()
   }
 
+  // バーコード再生成
+  await barcodeRegenerate()
+
   // 更新処理
-  firebase
-    .firestore()
-    .collection('users')
-    .doc(uId)
-    .get({})
+  getDoc(userDoc)
     .then((response) => {
       const userData: userDBData = response.data() as userDBData
       if (userData) {

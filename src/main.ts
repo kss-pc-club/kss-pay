@@ -6,9 +6,10 @@ import './login'
 import './serviceWorkerRegister'
 import './showHistory'
 
+import { signOut } from 'firebase/auth'
 import $ from 'jquery'
 
-import { auth, firebase, userData } from './firebase'
+import { auth, userData } from './firebase'
 import { modal, sleep, toast } from './functions'
 import { sync } from './syncData'
 // import { generateBarcode } from './barcode/canvas'
@@ -37,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // サインアウト処理
   $('p#logout').on('click', () => {
     if (confirm('ログアウトしますか？')) {
-      firebase.auth().signOut().catch(console.error)
+      signOut(auth).catch(console.error)
     }
   })
 
@@ -93,30 +94,30 @@ const firebaseUserDataLoaded = () => {
   }
 
   // メール認証
-  if (userData.mail && !userData.mailVerified) {
-    $('.modal p a').on('click', function () {
-      auth.currentUser
-        ?.sendEmailVerification()
-        .then(() => {
-          void toast('確認メールを送信しました')
-        })
-        .catch((err) => {
-          console.error(err)
-          void toast('エラーが発生しました')
-        })
-      $(this).off('click')
-    })
+  // if (userData.mail && !userData.mailVerified) {
+  //   $('.modal p a').on('click', function () {
+  //     auth.currentUser
+  //       ?.sendEmailVerification()
+  //       .then(() => {
+  //         void toast('確認メールを送信しました')
+  //       })
+  //       .catch((err) => {
+  //         console.error(err)
+  //         void toast('エラーが発生しました')
+  //       })
+  //     $(this).off('click')
+  //   })
 
-    modal(
-      {
-        ttl: 'メールアドレスが確認されていません',
-        detail:
-          'このアカウントのメールアドレスが認証されていません。メールを確認し、認証を行ってください。\n利用するのが初めての方はまだメールが送信されていないことがあります。\n以下リンクをクリックして、メールを送信してください。',
-        link: { show: true, url: '#', ttl: '認証メールを送信' },
-      },
-      false
-    )
-  }
+  //   modal(
+  //     {
+  //       ttl: 'メールアドレスが確認されていません',
+  //       detail:
+  //         'このアカウントのメールアドレスが認証されていません。メールを確認し、認証を行ってください。\n利用するのが初めての方はまだメールが送信されていないことがあります。\n以下リンクをクリックして、メールを送信してください。',
+  //       link: { show: true, url: '#', ttl: '認証メールを送信' },
+  //     },
+  //     false
+  //   )
+  // }
 
   // 同期させる
   void sync()

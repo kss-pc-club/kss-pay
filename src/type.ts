@@ -1,11 +1,14 @@
 //----- 使用するタイプ一覧 -----//
-import { firebase } from './firebase'
+
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
+} from 'firebase/auth'
+import type { Timestamp } from 'firebase/firestore'
 
 // 使用できるプロバイダのクラス。今のところGoogle、Facebook、Twitterの3種。
-type Provider =
-  | firebase.auth.GoogleAuthProvider
-  | firebase.auth.FacebookAuthProvider
-  | firebase.auth.TwitterAuthProvider
+type Provider = GoogleAuthProvider | FacebookAuthProvider | TwitterAuthProvider
 
 // 使用できるプロバイダの名前
 type providers = 'facebook' | 'google' | 'twitter' | 'mail'
@@ -38,12 +41,13 @@ type userDBData =
       barcode: string
       money: number
       history: {
-        time: firebase.firestore.Timestamp
+        time: Timestamp
         place: string
         item: string
         amount: number
         cost: number
       }[]
+      initialized: boolean
     }
   | undefined
 

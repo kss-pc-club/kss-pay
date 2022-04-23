@@ -1,7 +1,8 @@
 //----- ヘッダーDOM操作 -----//
+import { signOut } from 'firebase/auth'
 import $ from 'jquery'
 
-import { firebase } from './firebase'
+import { auth } from './firebase'
 import { sleep } from './functions'
 import { sync } from './syncData'
 
@@ -25,7 +26,7 @@ const headerOnClick = () => {
   })
   $('li#logout').on('click', () => {
     if (confirm('ログアウトしますか？')) {
-      firebase.auth().signOut().catch(console.error)
+      signOut(auth).catch(console.error)
     }
   })
 }

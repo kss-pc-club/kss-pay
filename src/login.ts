@@ -1,13 +1,13 @@
 import {
   FacebookAuthProvider,
-  getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   TwitterAuthProvider,
 } from 'firebase/auth'
 import $ from 'jquery'
 
-const auth = getAuth()
+import { auth } from './firebase'
+
 const GProvider = new GoogleAuthProvider()
 const FProvider = new FacebookAuthProvider()
 const TProvider = new TwitterAuthProvider()
